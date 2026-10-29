@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import "leaflet/dist/leaflet.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    @apply bg-slate-50 text-navy-900 font-sans;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-navy-700 text-white hover:bg-navy-800 focus:ring-navy-500 shadow-sm hover:shadow-md;
+  }
+  .btn-secondary {
+    @apply btn bg-white text-navy-700 border border-slate-200 hover:bg-slate-50 focus:ring-navy-500;
+  }
+  .btn-accent {
+    @apply btn bg-accent-600 text-white hover:bg-accent-700 focus:ring-accent-500 shadow-sm hover:shadow-md;
+  }
+  .btn-ghost {
+    @apply btn text-navy-600 hover:bg-navy-50 focus:ring-navy-500;
+  }
+  .btn-danger {
+    @apply btn bg-rose-600 text-white hover:bg-rose-700 focus:ring-rose-500;
+  }
+  .input {
+    @apply w-full rounded-lg border border-slate-200 bg-white px-3.5 py-2.5 text-sm text-navy-900 placeholder:text-slate-400 focus:border-navy-400 focus:outline-none focus:ring-2 focus:ring-navy-100 transition-colors;
+  }
+  .label {
+    @apply block text-sm font-medium text-navy-800 mb-1.5;
+  }
+  .card {
+    @apply bg-white rounded-xl border border-slate-200 shadow-card transition-all duration-200;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 rounded-full border px-2.5 py-0.5 text-xs font-medium capitalize;
+  }
+}
+
+/* Leaflet map sizing */
+.leaflet-container {
+  z-index: 0;
+}
